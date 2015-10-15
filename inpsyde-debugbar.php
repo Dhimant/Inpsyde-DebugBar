@@ -48,7 +48,6 @@ add_action( 'plugins_loaded', __NAMESPACE__ . '\run' );
  * @return void
  */
 function run() {
-	echo "<pre>" . print_r( get_config(), true ) . "</pre>";
 
 	// init the debug-bar
 	$debug_bar = new Plugin();
@@ -71,11 +70,12 @@ function logger() {
 function get_config() {
 
 	$config = wp_cache_get( 'config', 'inpsyde-debugbar' );
-	if ( is_array( $config ) ) {
+	if ( is_a( $config, '\Inpsyde\DebugBar\Model\Config' ) ) {
 		return $config;
 	}
-	$file            = __FILE__;
-	$config          = new Model\Config();
+
+	$file   = __FILE__;
+	$config = new Model\Config();
 
 	$plugin_dir_path = plugin_dir_path( $file );
 	$config->set( 'plugin_dir_path', $plugin_dir_path );
@@ -109,7 +109,7 @@ function get_config() {
 		'textdomain'      => 'Text Domain',
 		'textdomain_path' => 'Domain Path',
 	);
-	$plugin_headers = get_file_data( $file, $default_headers );
+	$plugin_headers  = get_file_data( $file, $default_headers );
 	$config->import( $plugin_headers );
 
 	// creating some default nonce and nonce.name
