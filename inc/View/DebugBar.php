@@ -92,19 +92,20 @@ class DebugBar {
 	 */
 	public function load_assets() {
 
+		$config = \Inpsyde\DebugBar\get_config();
+
 		$asset_uri = WP_CONTENT_URL . '/plugins/inpsyde-debugbar/assets/';
-		$prefix    = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
 		wp_enqueue_style(
 			'inpsyde-debugger',
-			$asset_uri . 'css/style' . $prefix . '.css',
+			$config->get( 'css_url' ) . 'style' . $config->get( 'asset_suffix' ) . '.css',
 			array(),
 			NULL
 		);
 
 		wp_enqueue_script(
 			'inpsyde-debugger',
-			$asset_uri . 'js/inpsyde-debugger' . $prefix . '.js',
+			$config->get( 'js_url' ) . 'inpsyde-debugger' . $config->get( 'asset_suffix' ) . '.js',
 			array( 'jquery', 'backbone' ),
 			NULL,
 			TRUE
