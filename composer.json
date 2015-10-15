@@ -1,0 +1,26 @@
+{
+  "name": "inpsyde-debugbar",
+  "description": "DebugBar for WordPress.",
+  "keywords": [
+    "wordpress",
+    "wordpress-plugin"
+  ],
+  "type": "wordpress-plugin",
+  "authors": [
+    {
+      "name": "ChriCo",
+      "email": "c.brueckner@inpsyde.com",
+      "homepage": "http://www.chrico.info"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0",
+    "monolog/monolog": "^1.17",
+    "jdorn/sql-formatter": "dev-master"
+  },
+  "autoload": {
+    "psr-4": {
+      "Inpsyde\\DebugBar\\": "inc/"
+    }
+  }
+}

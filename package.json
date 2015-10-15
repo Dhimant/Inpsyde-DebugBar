@@ -1,0 +1,28 @@
+{
+  "name": "inpsyde-debugbar",
+  "version": "0.1.0",
+  "description": "DebugBar for WordPress.",
+  "author": "Inpsyde GmbH",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-autoprefixer": "^3.0.0",
+    "grunt-combine-mq": "^0.9.0",
+    "grunt-contrib-concat": "^0.5.1",
+    "grunt-contrib-cssmin": "*",
+    "grunt-contrib-imagemin": "*",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-sass": "*",
+    "grunt-contrib-uglify": "^0.9.1",
+    "grunt-lineending": "*",
+    "grunt-lodash": "^0.4.0",
+    "lodash-cli": "^3.7.0",
+    "matchdep": "*"
+  },
+  "dependencies": {
+    "grunt-autoprefixer": "^3.0.0",
+    "grunt-contrib-cssmin": "^0.12.2",
+    "grunt-contrib-imagemin": "^0.9.4",
+    "grunt-contrib-jshint": "^0.11.2",
+    "matchdep": "*"
+  }
+}

@@ -1,0 +1,63 @@
+// Content ******************************************
+
+.inpsyde-debugbar__content-wrapper {
+	@extend %clearfix;
+	height: 100%;
+}
+
+.inpsyde-debugbar__content {
+	@extend %clearfix;
+	margin: 0 11px 14px;
+	padding: 0;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	height: 100%;
+
+	&--is-hidden {
+		display: none
+	}
+
+	ul,
+	li {
+		padding: 0;
+		margin: 0;
+		list-style: none outside none
+	}
+
+	li {
+		border-bottom: 1px solid #d7d7d7
+	}
+
+	table,
+	th,
+	td {
+		border: 0 none;
+		border-collapse: collapse
+	}
+
+	table {
+		margin: 0;
+		width: 100%;
+		font-size: 14px;
+	}
+
+	th,
+	td {
+		padding: 7px;
+		text-align: left;
+		vertical-align: top;
+		transition: background-color .25s linear;
+		word-wrap: break-word;
+	}
+
+	th {
+		color: #ababab;
+		font-weight: normal;
+		max-width: 12em;
+		overflow: hidden;
+		padding-left: 7px;
+		text-overflow: ellipsis;
+		width: 12em
+	}
+
+}

@@ -1,0 +1,82 @@
+// Log Level ******************************************
+//
+// see log levels in \Monolog\Logger-Class
+
+.inpsyde-debugbar___log-level {
+	margin-right: 5px;
+
+	&--100 {
+		border-left: 15px solid #ccc;
+	}
+
+	&--200 {
+		border-left: 15px solid #468847;
+	}
+
+	&--250 {
+		border-left: 15px solid #3a87ad;
+	}
+
+	&--300 {
+		border-left: 15px solid #c09853;
+	}
+
+	&--400 {
+		border-left: 15px solid #f0ad4e;
+	}
+
+	&--500 {
+		border-left: 15px solid #ff7708;
+	}
+
+	&--550 {
+		border-left: 15px solid #c12a19;
+	}
+
+	&--600 {
+		border-left: 15px solid #000;
+		font-weight: 700;
+	}
+}
+
+.inpsyde-debugbar-log {
+	transition: background 0.25s linear;
+
+	tbody {
+		display: none;
+	}
+
+	&--is-open {
+		background: #f1f1f1;
+
+		tbody {
+			display: table-row-group;
+		}
+	}
+
+	&__detail {
+
+		&-link {
+			display: block;
+			text-align: right;
+			margin-right: 25px;
+		}
+
+		&-content {
+
+			table {
+				background: #fff;
+			}
+
+			tr {
+				border-bottom: 1px solid #ddd;
+
+				&:last-child {
+					border-bottom: 0;
+				}
+			}
+		}
+
+	}
+
+}

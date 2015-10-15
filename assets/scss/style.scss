@@ -1,0 +1,38 @@
+// Current version (YYYYMMDD).
+// Used as cache buster for images.
+$version: "20150903";
+
+/*# sourceMappingURL=style.css.map */
+
+//
+// How to use .clearfix in 2015
+//
+// @see https://ihatetomatoes.net/what-ive-learned-at-cssconfau-2015/
+//
+@mixin clearfix($extend: true) {
+	@if $extend {
+		@extend %clearfix;
+	} @else {
+		&:after {
+			content: '';
+			display: table;
+			clear: both;
+		}
+	}
+}
+
+%clearfix {
+	@include clearfix($extend: false);
+}
+
+
+@import "partials/_layout";
+
+// we need a strong selector to avoid overwriting the styles by theme.
+#inpsyde-debugbar {
+
+	@import "partials/tabs";
+	@import "partials/content";
+	@import "partials/log";
+
+}
