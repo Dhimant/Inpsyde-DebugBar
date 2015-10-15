@@ -58,15 +58,16 @@ class Plugin {
 		$this->add_collector( new Collector\Rewrite() );
 		$this->add_collector( new Collector\Enqueue() );
 
-		if ( ! defined( 'WP_DEBUG_DISPLAY' ) || ! WP_DEBUG_DISPLAY ) {
-			return;
+		$this->view = new View\DebugBar( $this->tabs );
+		if ( defined( 'WP_DEBUG_DISPLAY' ) && WP_DEBUG_DISPLAY ) {
+
+			add_action( 'wp_footer', array( $this->view, 'render' ), 99999 );
+			add_action( 'admin_footer', array( $this->view, 'render' ), 99999 );
+			add_action( 'wp_enqueue_scripts', array( $this->view, 'load_assets' ) );
+			add_action( 'admin_enqueue_scripts', array( $this->view, 'load_assets' ) );
+
 		}
 
-		$this->view = new View\DebugBar( $this->tabs );
-		add_action( 'wp_footer', array( $this->view, 'render' ), 99999 );
-		add_action( 'admin_footer', array( $this->view, 'render' ), 99999 );
-		add_action( 'wp_enqueue_scripts', array( $this->view, 'load_assets' ) );
-		add_action( 'admin_enqueue_scripts', array( $this->view, 'load_assets' ) );
 
 		/**
 		 * Runs after internal actions have been registered.
