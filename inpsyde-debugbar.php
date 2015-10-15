@@ -47,7 +47,7 @@ add_action( 'plugins_loaded', __NAMESPACE__ . '\run' );
  * @return void
  */
 function run() {
-	echo "<pre>" . print_r( get_config(), true ) . "</pre>";
+
 	// init the debug-bar
 	$debug_bar = new Plugin();
 	$debug_bar->run();
