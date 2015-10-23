@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "73410dfd34dd4cfb6f57f84196652d27",
+    "hash": "439a0634bdf778966f2eba2e634b0b39",
     "packages": [
         {
             "name": "jdorn/sql-formatter",
