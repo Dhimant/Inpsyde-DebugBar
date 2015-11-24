@@ -1,6 +1,7 @@
 {
   "name": "inpsyde/debugbar",
   "description": "DebugBar for WordPress.",
+  "version": "1.0",
   "keywords": [
     "wordpress",
     "wordpress-plugin"
