@@ -17,26 +17,27 @@ if ( ! function_exists( 'add_action' ) ) {
 	return;
 }
 
-$autoload_file = __DIR__ . '/vendor/autoload.php';
-if ( ! file_exists( $autoload_file ) || ! is_readable( $autoload_file ) ) {
+if ( ! class_exists( __NAMESPACE__ . '\Plugin' ) ) {
 
-	add_action(
-		'admin_notices', function () {
+	$autoload_file = __DIR__ . '/vendor/autoload.php';
+	if ( file_exists( $autoload_file ) ) {
+		require $autoload_file;
+	} else {
+		add_action( 'admin_notices', function () {
 
-		$dir = dirname( __FILE__ );
-		$msg = sprintf(
-			'Please exec <code>composer install</code> in <code>%s</code> before using the plugin <strong>%s</strong> or change the rights to read access.',
-			$dir,
-			basename( $dir )
-		);
+			$dir = dirname( __FILE__ );
+			$msg = sprintf(
+					'Please exec <code>composer install</code> in <code>%s</code> before using the plugin <strong>%s</strong> or change the rights to read access.',
+					$dir,
+					basename( $dir )
+			);
 
-		echo '<div class="error"><p>' . $msg . '</p></div>';
+			echo '<div class="error"><p>' . $msg . '</p></div>';
+		} );
+
+		return;
 	}
-	);
-
-	return;
 }
-include_once( $autoload_file );
 
 add_action( 'plugins_loaded', __NAMESPACE__ . '\run' );
 /**
