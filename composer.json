@@ -17,7 +17,7 @@
   "require": {
     "php": ">=5.4.0",
     "monolog/monolog": "^1.17",
-    "jdorn/sql-formatter": "dev-master"
+    "jdorn/sql-formatter": "v1.2.17"
   },
   "autoload": {
     "psr-4": {
