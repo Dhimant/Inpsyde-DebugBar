@@ -1,5 +1,8 @@
 # Inpsyde DebugBar
 
+## UNMAINTAINED
+NOTE: This repository is no longer maintained.
+
 ## Installation
 1. Download or checkout repository into your Plugin-Folder.
 2. Run `composer install` in `plugins/inpsyde-debugbar/`.
